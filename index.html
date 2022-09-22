@@ -1,8 +1,444 @@
 <html>
     <head>
-    <h1>
-    ;laksjdfl;kjasdfasdf    
-    </h1>
+        <style>
+        @font-face {
+            font-family:'Roboto';
+            src: url("fonts/Roboto-Medium.ttf") format("truetype");
+            font-weight:normal;
+            font-style:normal;
+        }
+        @keyframes slideInFromLeft {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+        }
+        @keyframes slideInFromRight {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+        }
+        @keyframes slideInFromBottom {
+        0% {
+            transform: translateY(500%);
+        }
+        100% {
+            transform: translateY(0%);
+        }
+        }        
+        @keyframes fadeIn {
+            0% {opacity:0;}
+            100% {opacity:1;}
+        }
+        html{
+            overflow-y: scroll;
+        }
+        body{
+            font-family:Roboto;
+        }
+        .header {
+            color: rgb(27, 27, 27);
+            font-family:Roboto;
+            width:1500;
+            height:60;
+            padding-top: 15px;
+            padding-bottom:25px;
+            margin-top:10px;
+            background-color: none;
+            vertical-align: middle;
+            margin:auto;
+            animation: fadeIn .5s;
+            background-image: url(images/banner.jpg);
+            background-size: 90%;
+        }
+        .name {
+            margin-top:5px;
+            font-size: 45;
+            padding-left: 100px;
+            display: inline-block;
+        }
+        .name.desc {
+            display:inline-block;
+            font-size: 22.5;
+            padding-left: 60px;
+            padding-top:0px;
+        }
+        .headline {
+            color: black;
+            font-family:'Georgia, 'Times New Roman', Times, serif';
+            width:1500;
+            height:100;
+            padding-top: 15px;
+            padding-bottom:25px;
+            margin-top:10px;
+            background-color: none;
+            vertical-align: middle;
+            margin:auto;
+        }
+        .headshot {
+            margin-left:50px;
+            width: 350px;
+            height:auto;
+            display:inline-block;
+            animation: slideInFromLeft 1s, fadeIn 2s;
+        }
+        a {
+            color:slategray;
+            text-decoration:none;
+        }
+        a:hover {
+            color: darkblue;
+        }
+        #fedlink {
+            color:slategray;
+        }
+        #fedlink:hover {
+            color:darkblue
+        }
+        .intro {
+            color: black;
+            display:inline-block;
+            font-size: 18;
+            width: 800px;
+            padding:25px;
+            padding-left: 5px;
+            margin-left: 75px;
+            margin-top:10px;
+            position:relative;
+            top:-31px;
+            font-family:Roboto;
+            border-right:1px solid rgba(27, 27, 27, 0.3);
+            border-bottom:1px solid rgba(27, 27, 27, 0.3);
+            animation: slideInFromRight 1s, fadeIn 2s;
+        }
+        .accordion {
+            position:relative;
+            font-size:20;
+            width:1200px;
+            height:75px;
+            border-radius: 40px;
+            padding-left: 30px;
+            text-align:left;
+            margin:auto;
+        }
+        .accordion:hover {
+            background-color: rgb(146, 122, 27);
+            color:white
+        }
+        .accordion.active {
+            background-color: rgb(0,54,123);
+            color:white
+        }
+        .education {
+            color: rgb(27, 27, 27);
+            font-family:Roboto;
+            background-color: none;
+            vertical-align: middle;  
+            width:1500;  
+            margin:auto;
+            padding-top:300px;
+            padding-left:160px;
+            animation: slideInFromRight 1s, fadeIn 2s;
+        }
+        .exp {
+            color: rgb(27, 27, 27);
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            background-color: none;
+            vertical-align: middle;  
+            width:1500;  
+            margin:auto;
+            padding-top:25px;
+            padding-left:160px;
+            animation: slideInFromRight 1.2s, fadeIn 2s;
+        }
+        .edu-table{
+            overflow:hidden;
+            display:none;
+        }
+        .work{
+            overflow:hidden;
+            display:none;
+            width:1000;
+        }
+        .reveal{
+        position: relative;
+        transform: translateX(150px);
+        opacity: 0;
+        transition: 1.2s all ease;
+        background-color: none;
+        }
+
+        .reveal.active{
+        transform: translateX(0);
+        opacity: 1;
+        background-color: none;
+        }
+        </style>
+    </head>
+<body>
+
+    <div class="header">
+        <p class="name"><strong>Lucas Misera </strong></p>
+        <p class="name desc">Policy analyst | Data analyst | Entry-level programmer</p>
+    </div>
+
+    <div class="headline">
+        <img class="headshot" src="images/lm_profile_picture.jpg">
+        <p class="intro">                 
+            Lucas Misera is a policy analyst from Pittsburgh, Pennsylvania. In 2018, Lucas graduated from Kent State University with degrees in economics and finance. 
+            In 2020, he graduated from the University of Michigan with a master's degree in public policy. <br /><br />
+
+            Currently, Lucas works for the Federal Reserve Bank of Cleveland in their Community Development Department. His work centers around small businesses, specifically their access
+            to financing. Since June 2020, he's led the programming, cleaning, and analysis of the <a id="fedlink" style="text-decoration:none" href="https://www.fedsmallbusiness.org" target="_blank">Small Business Credit Survey</a>, a national survey of over 15,000 businesses across the U.S. <br /><br />
+
+            Prior to joining the Cleveland Fed, Lucas worked as a research assistant for the University of Michigan's Center on Finance, Law, and Policy, primarily supporting the Detroit Neighborhood Entrepreneur's
+            Project. At Kent State, Lucas was an entrepreneurial reporting intern for 89.7 WKSU, covering small-business issues in Northeast Ohio.
+        </p>
+    </div>
+
+    <div class="education">
+        <button class="accordion"><b>Education</b></button>
+            <table class="edu-table" style="margin-top:50px;font-size:120%">
+                <tr style="height:60px;font-family:Georgia, 'Times New Roman', Times, serif">
+                    <td style="width:150px;text-align:center">
+                        <img class="uofm" src="images/uofm.png">
+                    </td>
+                    <td style="width:210px;text-align:left">
+                        University of Michigan
+                    </td>
+                    <td style="width:150px;text-align:left">
+                        2018-2020
+                    </td>
+                    <td style="width:315px;text-align:left"> 
+                        Master of public policy (MPP)
+                    </td>
+                </tr>
+                <tr style="height:175px;font-family:Georgia, 'Times New Roman', Times, serif">
+                    <td style="width:150px;text-align:center">
+                        <img class="uofm" src="images/ksu.png">
+                    </td>
+                    <td style="width:210px;text-align:left">
+                        Kent State University
+                    </td>
+                    <td style="width:150px;text-align:left">
+                        2014-2018
+                    </td>
+                    <td style="width:400px;text-align:left">
+                        Bachelor of Business Administration (BBA)<br /><hr class="edu-divider" style="margin-top:4px;margin-bottom:4px">Economics, Finance
+                    </td>
+                </tr>
+            </table>
+    </div>
+
+    <div class="exp">
+        <button class="accordion"><b>Work experience</b></button>
+            <div class="work" style="margin-top:20px;margin-left:50px;margin-right:400px">
+                <div>
+                <h2 class="workexp first">   
+                    <b>Federal Reserve Bank of Cleveland</b><span style="font-size:20"><span style="margin-left:25px">|</span>
+                    <span style="margin-left:25px">Cleveland, OH</span>
+                    <span style="margin-left:25px">|</span>
+                    <span style="margin-left:25px">May 2019 - Present</span></span>
+                </h2>                 
+                </div>  
+                <hr style="border-top:1px solid slategray; margin-top:2px;">     
+                <div style="margin-right:50px;margin-top:30px;margin-left:25px;font-size:120%;font-family:Georgia, 'Times New Roman', Times, serif">
+                    <table class="worktable" style="border-spacing:0px;table-layout:fixed">
+                        <tr>
+                            <td style="font-size:115%;width:250px;vertical-align:top">
+                                Description
+                            </td>
+                            <td style="line-height:145%;font-size:85%;width:1500px;word-break:normal;vertical-align:top;">
+                                Following a three-month internship in 2019, Lucas joined the Federal Reserve Bank of Cleveland's Community Development as a full-time CD analyst in June 2020. Playing a
+                                pivotal role in transferring leadership of the Small Business Credit Survey (SBCS) from the New York Fed to Cleveland, he was promoted in early 2021 to policy analyst.
+                                Lucas continues to play a key role in programming, cleaning, and analyzing the SBCS.
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:115%;width:250px;vertical-align:top;">
+                                <p style="margin-top:40px;">Highlights</p>
+                            </td>
+                            <td style="line-height:145%;font-size:85%;width:1500px;word-break:normal;">
+                                <p class="publist" style="margin-top:40px;">
+                                Since joining the Cleveland Fed, Lucas has led the successful transition of the SBCS's leadership from New York to Cleveland. Having sucessfully led two full 
+                                annual survey cycles, the impact of the survey during his time with the team has been substantial. The SBCS has been cited by a wide range of media outlets, 
+                                like <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiUm-HOxZD6AhUprYkEHRiJCLUQFnoECBsQAQ&url=https%3A%2F%2Fwww.bloomberg.com%2Fnews%2Farticles%2F2021-02-03%2Ffed-survey-shows-stark-race-gap-in-small-firms-credit-health&usg=AOvVaw2yqZx5zYpbbNIJARDOK07a"
+                                target="_blank">Bloomberg</a>, <a href="https://www.forbes.com/sites/rohitarora/2022/02/27/feds-small-business-credit-survey-ids-pandemics-hardest-hit-firms/?sh=3db2557128a4" target="_blank">Forbes</a>, and
+                                <a href="https://www.americanbanker.com/news/pandemic-has-hit-minority-owned-small-businesses-hardest-fed" target="_blank">American Banker</a>. The survey has also been cited by key policymakers, like 
+                                <a href="https://smallbusiness.house.gov/news/documentsingle.aspx?DocumentID=4287" targe="_blank"> Congresswoman Velazquez of the Committee on Small Business</a> or 
+                                <a href="https://www.federalreserve.gov/newsevents/speech/files/powell20210503a.pdf" target="_blank">Chairman Jerome Powell of the Federal Reserve</a>.
+                                </p>
+                                <p>
+                                    Lucas also has experience presenting SBCS findings to Federal Reserve Bank of Cleveland leadership, external researchers, and media outlets. In 2022, he presented at the 
+                                    National Community Reinvestment Coalition's 2022 Just Economy Conference in Washington, D.C., as well as to 
+                                    <a href="https://nabe.com/NABE/Events/Event_Display.aspx?EventKey=SBERT3822&WebsiteKey=91b9e16d-e6fe-4f31-a4af-02c194225c32" target="_blank">members of the National Association of Business Economists. 
+                                    </a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:115%;width:250px;vertical-align:top;">
+                                <p style="margin-top:40px;">Publications</p>
+                            </td>
+                            <td style="line-height:145%;font-size:85%;width:1500px;word-break:normal;">
+                                <p class="publist" style="margin-top:40px;">
+                                    <p style="font-size:130%">2020</p>
+                                    <li>
+                                        <a href="https://www.clevelandfed.org/en/newsroom-and-events/publications/community-development-briefs/db-20201008-misera-report.aspx?utm_source=cfd&utm_medium=email&utm_campaign=ClevelandFedDigest" target="_blank">An uphill battle: COVID-19's outsized toll on minority-owned firms</a>
+                                    </li>
+                                    <p style="font-size:130%">2021</p>
+                                    <li>
+                                        <a href="https://www.fedsmallbusiness.org/survey/2021/report-on-employer-firms" target="_blank">SBCS 2021 Report on Employer Firms</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.fedsmallbusiness.org/survey/2021/2021-report-on-firms-owned-by-people-of-color" target="_blank">SBCS 2021 Report on Firms Owned by People of Color</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.fedsmallbusiness.org/survey/2021/report-on-nonemployer-firms" target="_blank">SBCS 2021 Report on Nonemployer Firms</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://econpapers.repec.org/paper/fipg00003/93536.html" target="_blank">The Pandemic’s Effects on Women-Owned Small Firms: Findings from the Small Business Credit Survey</a>
+                                    </li>
+                                    <p style="font-size:130%">2022</p>
+                                    <li>
+                                        <a href="https://fedcommunities.org/data/sbcs-firms-in-focus/" target="_blank">SBCS 2022 Firms in Focus</a>
+                                    <li>
+                                        <a href="https://www.fedsmallbusiness.org/survey/2022/report-on-employer-firms" target="_blank">SBCS 2022 Report on Employer Firms</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.fedsmallbusiness.org/survey/2022/2022-report-on-firms-owned-by-people-of-color" target="_blank">SBCS 2022 Report on Firms Owned by People of Color</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.fedsmallbusiness.org/survey/2022/2022-report-on-hiring-and-worker-retention" target="_blank">SBCS 2022 Report on Hiring and Worker Retention</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.fedsmallbusiness.org/survey/2022/clicking-for-credit" target="_blank">Clicking for Credit: Experiences of Online Lender Applicants from the Small Business Credit Survey</a>
+                                    </li>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div> 
+                <div class="reveal">     
+                <div>
+                    <h2 class="workexp first" style="margin-top:75px;">
+                        
+                        <b>Center on Finance, Law, and Policy</b><span style="font-size:20"><span style="margin-left:25px">|</span>
+                        <span style="margin-left:25px">Ann Arbor, MI</span>
+                        <span style="margin-left:25px">|</span>
+                        <span style="margin-left:25px">August 2018 - June 2020</span></span>
+                    </h2>                 
+                    </div>  
+                    <hr style="border-top:1px solid slategray; margin-top:2px;">     
+                    <div style="margin-right:50px;margin-top:30px;margin-left:25px;font-size:120%;font-family:Georgia, 'Times New Roman', Times, serif">
+                        <table class="worktable" style="border-spacing:0px;table-layout:fixed">
+                            <tr>
+                                <td style="font-size:115%;width:250px;vertical-align:top">
+                                    Description
+                                </td>
+                                <td style="line-height:145%;font-size:85%;width:1500px;word-break:normal;vertical-align:top;">
+                                    During his time at the University of Michigan, Lucas worked as a research assistant for the <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi1ye2GzZD6AhUDoFsKHXCyDpEQFnoECB4QAQ&url=https%3A%2F%2Ffinancelawpolicy.umich.edu%2F&usg=AOvVaw0_xBK9kpUsUwRkVvqjTJIm" target="_blank">Center on Finance, Law, and Policy</a>. 
+                                    Specifically, Lucas supported the Detroit Neighborhood Entreprenuers Program (DNEP).
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:115%;width:250px;vertical-align:top;">
+                                    <p style="margin-top:40px;">Highlights</p>
+                                </td>
+                                <td style="line-height:145%;font-size:85%;width:1500px;word-break:normal;">
+                                    <p class="publist" style="margin-top:40px;">
+                                    In his time as a research assistant, Lucas's primary work involved crafting methods for evaluating DNEP's success with small business clients. His research was cited in a grant 
+                                    application to Kresge, in which the research center was ultimately awarded $300,000 in funding. Much of Lucas's other work with the center was conducted on an ad-hoc basis. 
+                                    That work included briefing the Ford School's leadership ahead of speaking engagements, writing marketing materials for the center, and assisting with various conferences. 
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div> 
+                    </div>  
+                    <div class="reveal">       
+                    <div>
+                        <h2 class="workexp first" style="margin-top:75px;">
+                            
+                            <b>89.7 WKSU</b><span style="font-size:20"><span style="margin-left:25px">|</span>
+                            <span style="margin-left:25px">Kent, OH</span>
+                            <span style="margin-left:25px">|</span>
+                            <span style="margin-left:25px">October 2017 - May 2018</span></h2></span>
+                        </h2>                 
+                        </div>  
+                        <hr style="border-top:1px solid slategray; margin-top:2px;">     
+                        <div style="margin-right:50px;margin-top:30px;margin-left:25px;font-size:120%;font-family:Georgia, 'Times New Roman', Times, serif">
+                            <table class="worktable" style="border-spacing:0px;table-layout:fixed">
+                                <tr>
+                                    <td style="font-size:115%;width:250px;vertical-align:top">
+                                        Description
+                                    </td>
+                                    <td style="line-height:145%;font-size:85%;width:1500px;word-break:normal;vertical-align:top;">
+                                        Lucas spent a year as an entrepreneurial reporting for NPR-affiliated 89.7 WKSU at Kent State. He covered small business-related issues in Northeast Ohio, interviewing subjects for the stories, 
+                                        editing the interviews to be played on air, and writing scripts for the on-air anchor.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:115%;width:250px;vertical-align:top;">
+                                        <p style="margin-top:40px;">Highlights</p>
+                                    </td>
+                                    <td style="line-height:145%;font-size:85%;width:1500px;word-break:normal;vertical-align:top;">
+                                        <p style="margin-top:40px;"> 
+                                            <a href="https://www.wksu.org/economy/2017-12-25/richmond-heights-candy-store-owner-finds-sweet-success-despite-unique-barriers-to-women" target="_blank"><img src="images/npr1.png"></a><span style="margin-left:50px">
+                                                <a href="https://www.wksu.org/economy/2018-04-23/facing-headwinds-in-the-loan-market-entrepreneurs-look-elsewhere-for-funding" target="_blank"><img src="images/npr3.png"></a>
+                                            </span>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div></div>
+            </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+            });
+        }
+        function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+            } else {
+            reveals[i].classList.remove("active");
+            }
+        }
+        }
+
+        window.addEventListener("scroll", reveal);
+        </script>
 
 </body>
 </html>
