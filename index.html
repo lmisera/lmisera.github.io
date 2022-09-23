@@ -3,7 +3,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
         @media only screen {
-            display: none;
+            .body{
+            display:none;
+            }
         }
         @font-face {
             font-family:'Roboto';
@@ -91,6 +93,8 @@
             height:auto;
             display:inline-block;
             animation: slideInFromLeft 1s, fadeIn 2s;
+            position:relative;
+            z-index:2;
         }
         a {
             color:slategray;
@@ -120,6 +124,8 @@
             border-right:1px solid rgba(27, 27, 27, 0.3);
             border-bottom:1px solid rgba(27, 27, 27, 0.3);
             animation: slideInFromRight 1s, fadeIn 2s;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index:1;
         }
         .accordion {
             position:relative;
@@ -132,7 +138,7 @@
             margin:auto;
         }
         .accordion:hover {
-            background-color: rgb(146, 122, 27);
+            background-color: rgb(179,179,179);
             color:white
         }
         .accordion.active {
@@ -149,6 +155,8 @@
             padding-top:300px;
             padding-left:160px;
             animation: slideInFromRight 1s, fadeIn 2s;
+            background-color: rgba(255, 255, 255, 0.7) ;
+            z-index:-1;
         }
         .exp {
             color: rgb(27, 27, 27);
@@ -160,15 +168,19 @@
             padding-top:25px;
             padding-left:160px;
             animation: slideInFromRight 1.2s, fadeIn 2s;
+            background-color: rgba(255, 255, 255, 0.7) ;
+            z-index:-1;
         }
         .edu-table{
             overflow:hidden;
             display:none;
+            z-index:-1;
         }
         .work{
             overflow:hidden;
             display:none;
             width:1000;
+            z-index:-1;
         }
         .reveal{
         position: relative;
