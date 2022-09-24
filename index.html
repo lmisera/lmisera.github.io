@@ -2,14 +2,18 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <style>
-        @media screen and (max-width=1000px) {
+        @media only screen and (max-width=1000px) {
             .header {
             margin:auto;
             background-image: url(images/banner.jpg);
             background-size: 100%;
             }
+            .name.mobile {
+                font-size:100;
+            }
             .name.desc {
                 display:none;
+                visibility: hidden;
             }
             .name {
                 font-size:30;
@@ -64,6 +68,10 @@
             font-family:Roboto;
             background-image: url(images/background.png);
         }
+        .name.mobile {
+            display:none;
+            visibility:none;
+        }
         .header {
             color: rgb(27, 27, 27);
             font-family:Roboto;
@@ -84,6 +92,9 @@
             font-size: 45;
             padding-left: 100px;
             display: inline-block;
+        }
+        .name.mobile{
+            display:none;
         }
         .name.desc {
             display:inline-block;
@@ -219,6 +230,7 @@
     <div class="header">
         <p class="name"><strong>Lucas Misera </strong></p>
         <p class="name desc">Policy analyst | Data analyst | Entry-level developer</p>
+        <p class="name mobile">Policy analyst | Data analyst | Entry-level developer</p>
     </div>
 
     <div class="headline">
