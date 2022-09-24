@@ -2,7 +2,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <style>
-        @media only screen {
+        @media screen and (max-width=600px) {
             .header {
             margin:auto;
             background-image: url(images/banner.jpg);
@@ -12,9 +12,12 @@
                 display:none;
             }
             .name {
-                font-size:30
+                font-size:30;
             }
             .headshot {
+                display:none;
+            }
+            .headline {
                 display:none;
             }
         }
