@@ -3,10 +3,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
         @media only screen {
-            .body{
-            background-image:none;
-            }
+            display: none;
         }
+        
+        @media screen and (min-width:600px) {
         @font-face {
             font-family:'Roboto';
             src: url("fonts/Roboto-Medium.ttf") format("truetype");
@@ -194,6 +194,7 @@
         transform: translateX(0);
         opacity: 1;
         background-color: none;
+        }
         }
         </style>
     </head>
